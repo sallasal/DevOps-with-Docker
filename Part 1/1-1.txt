@@ -1,0 +1,37 @@
+sallasal@lx9-fuxi127:~$ docker container run -d nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+33847f680f63: Pull complete 
+dbb907d5159d: Pull complete 
+8a268f30c42a: Pull complete 
+b10cf527a02d: Pull complete 
+c90b090c213b: Pull complete 
+1f41b2f2bf94: Pull complete 
+Digest: sha256:8f335768880da6baf72b70c701002b45f4932acae8d574dedfddaf967fc3ac90
+Status: Downloaded newer image for nginx:latest
+93732f1ff1bca87a8990d85bac02bb288c97e79f82524d9e24088821fe5ca153
+
+sallasal@lx9-fuxi127:~$ docker container run -d nginx
+b4818d2ef06502ea43e082c8728f03cfd9ad6cdf6efe8a1b1f55e3b368d81907
+
+sallasal@lx9-fuxi127:~$ docker container run -d nginx
+0322c147a8b5055db790d2b48954872e392c5c1d61bf3310a947aa4e26510a81
+
+sallasal@lx9-fuxi127:~$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+0322c147a8b5   nginx     "/docker-entrypoint.…"   27 seconds ago   Up 27 seconds   80/tcp    clever_pike
+b4818d2ef065   nginx     "/docker-entrypoint.…"   30 seconds ago   Up 29 seconds   80/tcp    charming_goodall
+93732f1ff1bc   nginx     "/docker-entrypoint.…"   34 seconds ago   Up 33 seconds   80/tcp    elastic_keldysh
+
+sallasal@lx9-fuxi127:~$ docker container stop 03
+03
+
+sallasal@lx9-fuxi127:~$ docker container stop b4
+b4
+
+sallasal@lx9-fuxi127:~$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
+0322c147a8b5   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 11 seconds ago             clever_pike
+b4818d2ef065   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 3 seconds ago              charming_goodall
+93732f1ff1bc   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute           80/tcp    elastic_keldysh
+
