@@ -1,0 +1,30 @@
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker pull devopsdockeruh/simple-web-service:ubuntu
+ ... (pull succeeded)
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker pull devopsdockeruh/simple-web-service:alpine
+ ... (pull succeeded)
+  
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker image ls
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    1318b700e415   2 weeks ago    72.8MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker run -d -it --name exercise1-5 devopsdockeruh/simple-web-service:alpine 
+768f117797816efbb7ce47255c91d206b245a9ac0ca4d01cd73446cab75e9417
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker exec -it exercise1-5 sh
+/usr/src/app # tail -f ./text.log
+2021-08-15 13:09:23 +0000 UTC
+2021-08-15 13:09:25 +0000 UTC
+2021-08-15 13:09:27 +0000 UTC
+2021-08-15 13:09:29 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-08-15 13:09:31 +0000 UTC
+2021-08-15 13:09:33 +0000 UTC
+2021-08-15 13:09:35 +0000 UTC
+2021-08-15 13:09:37 +0000 UTC
+2021-08-15 13:09:39 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-08-15 13:09:41 +0000 UTC
+
