@@ -1,0 +1,9 @@
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker image ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
