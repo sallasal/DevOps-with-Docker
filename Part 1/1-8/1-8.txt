@@ -1,0 +1,44 @@
+BEFORE CURL INSTALLATION:
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-8$ docker build . -t curler
+Sending build context to Docker daemon  3.072kB
+Step 1/4 : FROM ubuntu:18.04
+18.04: Pulling from library/ubuntu
+feac53061382: Pull complete 
+Digest: sha256:7bd7a9ca99f868bf69c4b6212f64f2af8e243f97ba13abb3e641e03a7ceb59e8
+Status: Downloaded newer image for ubuntu:18.04
+ ---> 39a8cfeef173
+Step 2/4 : WORKDIR /usr/src/app
+ ---> Running in 0741fc2262b6
+Removing intermediate container 0741fc2262b6
+ ---> 4d3d7e0f4514
+Step 3/4 : COPY curler-script.sh .
+ ---> 3f33a2307f89
+Step 4/4 : CMD ./curler-script.sh
+ ---> Running in f6e73aca560f
+Removing intermediate container f6e73aca560f
+ ---> 406c07d6839a
+Successfully built 406c07d6839a
+Successfully tagged curler:latest
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-8$ docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+./curler-script.sh: 3: ./curler-script.sh: curl: not found
+
+
+AFTER INSTALLATION IN DIFFERENT TERMINAL:
+
+root@5581e611cd74:/usr/src/app# ./curler-script.sh 
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+root@5581e611cd74:/usr/src/app# ^C
+
