@@ -1,0 +1,68 @@
+TERMINAL 1:
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker run -d -it --name exercise1-4 ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+ ... (downloading and starting)
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker container ls
+ ... (list that contains only exercise1-4)
+
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker logs -f exercise1-4 
+ ... (log)
+
+
+
+TERMINAL 2:
+
+sallasal@lx9-fuxi127:~$ docker exec -it exercise1-4 bash
+
+root@66434769422d:/# ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   2616   604 pts/0    Ss+  10:40   0:00 sh -c echo "Input website:"; read 
+root           7  0.1  0.0   4116  3356 pts/1    Ss   10:43   0:00 bash
+root          16  0.0  0.0   5904  2920 pts/1    R+   10:43   0:00 ps aux
+
+root@66434769422d:/# apt-get install curl
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package curl
+
+root@66434769422d:/# apt update
+ ... (apt update successes)
+
+root@66434769422d:/# apt upgrade
+ ... (preparation for apt upgrade successes)
+ 
+Do you want to continue? [Y/n] y
+ ... (apt upgrade successes)
+ 
+root@66434769422d:/# curl --version
+curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+Release-Date: 2020-01-08
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+
+root@66434769422d:/# sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+root@66434769422d:/# sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
+
