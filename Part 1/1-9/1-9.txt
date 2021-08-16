@@ -1,0 +1,12 @@
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9$ mkdir usr
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9$ cd usr/
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr$ mkdir src
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr$ cd src
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr/src$ mkdir app
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr/src$ cd app/
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr/src/app$ touch text.log
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr/src/app$ cd ..
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr/src$ cd ..
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9/usr$ cd ..
+sallasal@lx9-fuxi127:~/Kurssit/DOWD/Part 1/1-9$ docker run -v "$(pwd)/usr/src/app/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service:ubuntu
+
