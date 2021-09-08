@@ -1,4 +1,4 @@
-sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker run -p 8080 devopsdockeruh/simple-web-service server
+sallasal@lx9-fuxi127:~/Kurssit/DOWD$ docker run -p 8080:8080 devopsdockeruh/simple-web-service server
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
