@@ -1,0 +1,12 @@
+Dockerfiles are modified in folders 1-12 and 1-13 (added ENV rows to correct places).
+
+Commands used to run fontend:
+docker build . -t ex-frontend
+docker run -p 5000:5000 ex-frontend
+
+Commands used to run backend:
+docker build . -t backend
+docker run -p 8080:8080 backend
+
+Response from the server:
+Success! Great job!

@@ -2,6 +2,9 @@ FROM ubuntu:18.04
 
 EXPOSE 5000
 
+# Add env variables
+ENV REACT_APP_BACKEND_URL=http://localhost:8080/
+
 COPY . ./myapp
 WORKDIR ./myapp
 
